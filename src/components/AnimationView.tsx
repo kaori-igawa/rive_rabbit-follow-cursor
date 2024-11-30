@@ -1,9 +1,6 @@
 // Rive
-import {
-  useRive,
-  Layout,
-  Fit,
-} from '@rive-app/react-canvas';
+import { useRive } from '@rive-app/react-canvas';
+// import { useRive, Layout, Fit, Alignment } from '@rive-app/react-canvas';
 
 import riveFile from '@data/riveFile.riv'
 
@@ -13,13 +10,14 @@ const AnimationView = () => {
     src: riveFile,
     artboard: 'Artboard',
     stateMachines: 'State Machine 1',
-    layout: new Layout({
-      fit: Fit.FitWidth, // Change to: rive.Fit.Contain, or Cover
-    }),
+    // layout: new Layout({
+    //   fit: Fit.Cover,
+    //   alignment: Alignment.TopCenter,
+    // }),
     autoplay: true,
   };
 
-  const { rive, RiveComponent } = useRive(riveParams);
+  const { RiveComponent } = useRive(riveParams);
 
   return <RiveComponent />;
 };
